@@ -20,14 +20,14 @@
                             Dashboard
                         </div>
                         <div class="dropdown-content shadow rounded-0 border-0" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="index.html">Student Details</a>
-                            <a class="dropdown-item" href="dashboard/test-marks.html">Test Marks</a>
-                            <a class="dropdown-item" href="dashboard/payments.html">Payments</a>
+                            <a class="dropdown-item" href="index.php">Student Details</a>
+                            <a class="dropdown-item" href="dashboard/test-marks.php">Test Marks</a>
+                            <a class="dropdown-item" href="dashboard/payments.php">Payments</a>
                         </div>
                     </div>
-                    <a class="btn text-primary border-0 rounded-0" href="registrations.html">Registration</a>
+                    <a class="btn text-primary border-0 rounded-0" href="registrations.php">Registration</a>
                     <a class="btn text-primary border-0 rounded-0 font-weight-bold" href="#">SMS Service</a>
-                    <a class="btn text-danger border-0 rounded-0 ml-auto" href="login.html">Sign Out</a>
+                    <a class="btn text-danger border-0 rounded-0 ml-auto" href="login.php">Sign Out</a>
                 </div>
             </div>
         </div>

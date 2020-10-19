@@ -1,3 +1,25 @@
+<?php
+include 'dbconnect.php';
+
+// $student_name = $_REQUEST['student_name'];
+// if(isset($_POST['register']))
+// {
+$name = $_POST['name'];
+$address = $_POST['address'];
+$contact = $_POST['contact'];
+$nic = $_POST['nic'];
+$year = $_POST['year'];
+
+    $sql = "INSERT INTO student (name, address, contact, nic, year) VALUES ('$name', '$address', '$contact', '$nic','$year')";
+// }
+if(mysqli_query($mysqli, $sql)){
+    echo "Records inserted successfully.";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,14 +43,14 @@
                             </div>
                             <div class="dropdown-content shadow rounded-0 border-0"
                                 aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="index.html">Student Details</a>
-                                <a class="dropdown-item" href="dashboard/test-marks.html">Test Marks</a>
-                                <a class="dropdown-item" href="dashboard/payments.html">Payments</a>
+                                <a class="dropdown-item" href="index.php">Student Details</a>
+                                <a class="dropdown-item" href="dashboard/test-marks.php">Test Marks</a>
+                                <a class="dropdown-item" href="dashboard/payments.php">Payments</a>
                             </div>
                         </div>
                         <a class="btn text-primary border-0 rounded-0 font-weight-bold" href="#">Registration</a>
-                        <a class="btn text-primary border-0 rounded-0" href="sms-services.html">SMS Service</a>
-                        <a class="btn text-danger border-0 rounded-0 ml-auto" href="login.html">Sign Out</a>
+                        <a class="btn text-primary border-0 rounded-0" href="sms-services.php">SMS Service</a>
+                        <a class="btn text-danger border-0 rounded-0 ml-auto" href="login.php">Sign Out</a>
                     </div>
                 </div>
             </div>
@@ -36,17 +58,21 @@
         <div class="row">
             <div class="col-12">
                 <div class="card shadow rounded-0 border-0 p-4">
-                    <form>
+                    <form action="registrations.php" method="post">
                         <h5 class="mr-2 font-weight-bold mb-0 mb-4">Registration</h5>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="inputEmail4">Student Name</label>
-                                <input type="text" class="form-control rounded-0" id="inputEmail4"
+                                <input type="text" class="form-control rounded-0" name="name" id="name"
                                     placeholder="Student Name">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="inputPassword4">NIC</label>
-                                <input type="text" class="form-control rounded-0" id="inputPassword4" placeholder="NIC">
+                                <input type="text" class="form-control rounded-0" name="nic" id="inputPassword4" placeholder="NIC">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputPassword4">Year</label>
+                                <input type="text" class="form-control rounded-0" name="year" id="inputPassword4" placeholder="Year">
                             </div>
                         </div>
                         <div class="form-group">
@@ -62,12 +88,12 @@
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control rounded-0" id="inputAddress"
+                            <input type="text" class="form-control rounded-0" name="address" id="inputAddress"
                                 placeholder="1234 Main St">
                         </div>
                         <div class="form-group">
                             <label for="inputContactNumber">Contact Number</label>
-                            <input type="text" class="form-control" id="inputContactNumber">
+                            <input type="text" class="form-control" name="contact" id="inputContactNumber">
                         </div>
                         <div class="form-group">
                             <label for="inputParentname">Parent Name</label>
@@ -91,7 +117,7 @@
                                 <input type="text" class="form-control rounded-0" id="inputSubj3">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary rounded-0">Sign in</button>
+                        <button type="submit" name="register" class="btn btn-primary rounded-0">Sign in</button>
                     </form>
                 </div>
             </div>
